@@ -1,0 +1,30 @@
+esphome:
+  name: ${name}
+  friendly_name: ${area} ${friendly_name}
+  name_add_mac_suffix: False
+  area: $(area)
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+  domain: !secret wifi_domain
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "${name} Fallback Hotspot"
+    password: !secret fallback_hotspot_password
+
+captive_portal:
+
+# Disable web server if the device is underpowered or lacks resources
+web_server:
+  port: 80
+  auth: 
+    username: !secret web_server_username
+    password: !secret web_server_password
+
+sensor:
+  - platform: uptime
+    name: "Uptime"
+    id: uptime_sensor
+    update_interval: 1min
+    disabled_by_default: False
