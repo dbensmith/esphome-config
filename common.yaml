@@ -24,7 +24,34 @@ web_server:
 
 sensor:
   - platform: uptime
-    name: "Uptime"
+    name: Uptime Sensor
     id: uptime_sensor
-    update_interval: 1min
-    disabled_by_default: False
+    internal: true
+    disabled_by_default: false
+    unit_of_measurement: s
+    update_interval: 60s
+
+text_sensor:
+- platform: template
+  name: Uptime
+  lambda: !lambda |-
+    int seconds = (id(uptime_sensor).state);
+    int days = seconds / (24 * 3600);
+    seconds = seconds % (24 * 3600);
+    int hours = seconds / 3600;
+    seconds = seconds % 3600;
+    int minutes = seconds /  60;
+    seconds = seconds % 60;
+    if ( days > 3650 ) {
+      return { "Starting up" };
+    } else if ( days ) {
+      return { (String(days) +"d " + String(hours) +"h " + String(minutes) +"m "+ String(seconds) +"s").c_str() };
+    } else if ( hours ) {
+      return { (String(hours) +"h " + String(minutes) +"m "+ String(seconds) +"s").c_str() };
+    } else if ( minutes ) {
+      return { (String(minutes) +"m "+ String(seconds) +"s").c_str() };
+    } else {
+      return { (String(seconds) +"s").c_str() };
+    }
+  disabled_by_default: false
+  update_interval: 60s
