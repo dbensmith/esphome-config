@@ -2,7 +2,7 @@ esphome:
   name: ${name}
   friendly_name: ${area} ${friendly_name}
   name_add_mac_suffix: False
-  area: $(area)
+  area: ${area}
 
 wifi:
   ssid: !secret wifi_ssid
