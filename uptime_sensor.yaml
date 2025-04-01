@@ -1,0 +1,9 @@
+sensor:
+  - platform: uptime
+    name: Uptime Sensor
+    id: uptime_sensor
+    entity_category: diagnostic
+    internal: false # https://esphome.io/components/sensor/index.html#base-sensor-configuration
+    disabled_by_default: false
+    unit_of_measurement: s
+    update_interval: 60s
