@@ -31,13 +31,3 @@ web_server:
   auth: 
     username: !secret web_server_username
     password: !secret web_server_password
-
-sensor:
-  - platform: uptime
-    name: Uptime Sensor
-    id: uptime_sensor
-    entity_category: diagnostic
-    # internal: true
-    disabled_by_default: false
-    unit_of_measurement: s
-    update_interval: 60s
