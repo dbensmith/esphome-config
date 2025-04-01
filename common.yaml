@@ -1,7 +1,7 @@
 esphome:
   name: ${name}
   friendly_name: ${area} ${friendly_name}
-  name_add_mac_suffix: False
+  name_add_mac_suffix: false
   area: ${area}
 
 wifi:
