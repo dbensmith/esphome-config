@@ -8,10 +8,11 @@ in your device yaml in ESPHome:
 ```
 packages:
   # Simplify configuration by reusing common settings across all devices
-  # https://github.com/dbensmith/esphome-config/blob/main/common.yaml
-  dbensmith.common:
+  # https://github.com/dbensmith/esphome-config
+  dbensmith.esphome-config:
     url: https://github.com/dbensmith/esphome-config
-    files: common.yaml
+    files: [ common.yaml, uptime_sensor.yaml ]
     ref: main
     refresh: 0s
 ```
+Select the files you want to include in the `files` property. In most cases, `common.yaml` is sufficient.
