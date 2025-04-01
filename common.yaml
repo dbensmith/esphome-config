@@ -18,6 +18,11 @@ api:
   encryption:
     key: !secret api_encryption_key
 
+# Don't enable OTA referencing secrets.yaml until you change the password manually for each device
+# See https://esphome.io/components/ota/esphome.html#updating-the-password
+#ota:
+#  password: !secret ota_password 
+
 captive_portal:
 
 # Disable web server if the device is underpowered or lacks resources
