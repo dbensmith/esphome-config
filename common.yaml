@@ -13,6 +13,11 @@ wifi:
     ssid: "${name} Fallback Hotspot"
     password: !secret fallback_hotspot_password
 
+# Enable Home Assistant API
+api:
+  encryption:
+    key: !secret api_encryption_key
+
 captive_portal:
 
 # Disable web server if the device is underpowered or lacks resources
