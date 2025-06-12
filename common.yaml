@@ -26,7 +26,8 @@ api:
 captive_portal:
 
 # Don't include if the device has limited resources
-web_server: #!include
+# Remove by appending `!remove` to the web_server line
+web_server:
   port: 80
   auth: 
     username: !secret web_server_username
