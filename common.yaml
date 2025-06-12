@@ -29,6 +29,7 @@ captive_portal:
 # Remove by appending `!remove` to the web_server line
 web_server: !remove
   port: 80
+  version: 3
   auth: 
     username: !secret web_server_username
     password: !secret web_server_password
