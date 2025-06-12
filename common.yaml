@@ -27,7 +27,7 @@ captive_portal:
 
 # Don't include if the device has limited resources
 # Remove by appending `!remove` to the web_server line
-web_server:
+web_server: !remove
   port: 80
   auth: 
     username: !secret web_server_username
