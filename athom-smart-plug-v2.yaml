@@ -8,5 +8,3 @@ esphome:
     board_upload.flash_size: 2MB
     board_upload.maximum_size: 2097152
     board_build.ldscript: eagle.flash.2m.ld
-
-web_server: !remove # Temporary until applied firmware can use the full 2 MB
