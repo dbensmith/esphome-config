@@ -24,3 +24,10 @@ api:
 #  password: !secret ota_password 
 
 captive_portal:
+
+# Don't include if the device has limited resources
+web_server: #!include
+  port: 80
+  auth: 
+    username: !secret web_server_username
+    password: !secret web_server_password
