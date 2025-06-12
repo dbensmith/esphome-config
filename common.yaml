@@ -24,10 +24,3 @@ api:
 #  password: !secret ota_password 
 
 captive_portal:
-
-# Disable web server if the device is underpowered or lacks resources
-web_server:
-  port: 80
-  auth: 
-    username: !secret web_server_username
-    password: !secret web_server_password
