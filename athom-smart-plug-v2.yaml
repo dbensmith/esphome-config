@@ -1,0 +1,12 @@
+esphome:
+  # This board has 2 MB flash, but ESPHome assumes 1 MB for the 8285 board ID 
+  # because early versions pre-Athom only shipped with 1 MB.
+  # Athom has not yet included this fix in their default config.
+  # https://github.com/athom-tech/athom-configs/issues/122#issuecomment-2929332266
+  # https://github.com/athom-tech/athom-configs/pull/124
+  platformio_options:
+    board_upload.flash_size: 2MB
+    board_upload.maximum_size: 2097152
+    board_build.ldscript: eagle.flash.2m.ld
+
+web_server: !remove # Temporary until applied firmware can use the full 2 MB
