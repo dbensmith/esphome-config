@@ -8,3 +8,7 @@ esphome:
     board_upload.flash_size: 2MB
     board_upload.maximum_size: 2097152
     board_build.ldscript: eagle.flash.2m.ld
+
+globals:
+  - id: !extend restore_mode
+    initial_value: "1"      # 0 = Always_Off. 1 = Restore_Power_Off. 2 = Always_On.
