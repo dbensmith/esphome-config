@@ -26,9 +26,9 @@ api:
 captive_portal:
 
 time:
-- id: sntp_time
+  - id: sntp_time
     servers:
-      - time.cloudflare.com
+    - time.cloudflare.com
 
 # Don't include if the device has limited resources
 # Remove by appending `!remove` to the web_server line
