@@ -12,3 +12,7 @@ esphome:
 globals:
   - id: !extend restore_mode
     initial_value: "1"      # 0 = Always_Off. 1 = Restore_Power_Off. 2 = Always_On.
+
+ota:
+  - platform: esphome
+    id: ota_esphome
