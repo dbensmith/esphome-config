@@ -21,9 +21,9 @@ api:
 # Don't enable OTA referencing secrets.yaml until you change the password manually for each device
 # See https://esphome.io/components/ota/esphome.html#updating-the-password
 ota:
-#  - platform: esphome
-#    id: ota_esphome
-#    password: !secret ota_password
+  - platform: esphome
+    id: ota_esphome
+    password: !secret ota_password
   - platform: web_server  # Enables web-based OTA uploads
 
 captive_portal:
