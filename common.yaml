@@ -25,6 +25,7 @@ ota:
     id: !extend ota_esphome
     password: !secret ota_password
   - platform: web_server  # Enables web-based OTA uploads
+    id: ota_web_server
 
 captive_portal:
 
