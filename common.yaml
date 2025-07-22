@@ -22,7 +22,7 @@ api:
 # See https://esphome.io/components/ota/esphome.html#updating-the-password
 ota:
   - platform: esphome
-    id: ota_esphome
+    id: !extend ota_esphome
     password: !secret ota_password
   - platform: web_server  # Enables web-based OTA uploads
 
