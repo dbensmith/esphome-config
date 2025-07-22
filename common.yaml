@@ -23,20 +23,9 @@ api:
 ota:
   - id: !extend ota_esphome
     password: !secret ota_password
-  - id: ota_web_server
-    platform: web_server  # Enables web-based OTA uploads
 
 captive_portal:
 
 time:
   - id: !extend sntp_time
     servers: time.cloudflare.com
-
-# Don't include if the device has limited resources
-# Remove by appending `!remove` to the web_server line
-web_server:
-  port: 80
-  version: 3
-  auth: 
-    username: !secret web_server_username
-    password: !secret web_server_password
