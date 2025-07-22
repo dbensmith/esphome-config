@@ -1,3 +1,7 @@
+substitutions:
+  timezone: !secret timezone
+  dns_domain: !secret wifi_domain
+
 esphome:
   name: ${name}
   friendly_name: ${area} ${friendly_name}
