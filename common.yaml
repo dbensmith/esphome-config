@@ -1,6 +1,6 @@
 substitutions:
+  dns_domain: !secret dns_domain
   timezone: !secret timezone
-  dns_domain: !secret wifi_domain
 
 esphome:
   name: ${name}
