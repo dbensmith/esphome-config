@@ -1,0 +1,35 @@
+substitutions:
+  name: atomecho-p00
+  friendly_name: "Assistant Speaker"
+  area: ""
+  micro_wake_word_model: okay_nabu  # hey_jarvis, hey_mycroft are also supported
+  timezone: !secret timezone
+
+packages:
+  m5stack.atom-echo-wake-word-voice-assistant: 
+    url: https://github.com/esphome/wake-word-voice-assistants
+    files: [ m5stack-atom-echo/m5stack-atom-echo.yaml ]
+    ref: main
+    refresh: 0s
+  # Simplify configuration by reusing common settings across all devices
+  dbensmith.esphome-config:
+    url: https://github.com/dbensmith/esphome-config
+    files: [ common.yaml ]
+    ref: main
+    refresh: 0s
+
+esphome:
+  comment: "M5Stack Atom Echo"
+
+# Disable the factory reset button by default
+button:
+  - id: !extend factory_reset_btn
+    disabled_by_default: true
+
+time:
+  - platform: sntp
+    id: sntp_time
+    timezone: "${timezone}"
+    # Change sync interval from default 5min to 6 hours
+    update_interval: 6h
+    # Servers are already defined in common.yaml
