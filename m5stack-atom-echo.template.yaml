@@ -1,3 +1,7 @@
+# This is a default template config to be used within ESPHome Device Builder
+# Device: m5stack Atom Echo
+# Purpose: Voice Assistant
+
 substitutions:
   name: atomecho-p00
   friendly_name: "Assistant Speaker"
