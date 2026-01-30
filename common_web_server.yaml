@@ -3,11 +3,11 @@
 
 ota:
   - id: ota_web_server
-    platform: web_server  # Enables web-based OTA uploads
+    platform: web_server # Enables web-based OTA uploads
 
 web_server:
   port: 80
   version: 3
-  auth: 
+  auth:
     username: !secret web_server_username
     password: !secret web_server_password

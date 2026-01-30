@@ -6,19 +6,19 @@ substitutions:
   name: atomecho-p00
   friendly_name: "Assistant Speaker"
   area: ""
-  micro_wake_word_model: okay_nabu  # hey_jarvis, hey_mycroft are also supported
+  micro_wake_word_model: okay_nabu # hey_jarvis, hey_mycroft are also supported
   timezone: !secret timezone
 
 packages:
-  m5stack.atom-echo-wake-word-voice-assistant: 
+  m5stack.atom-echo-wake-word-voice-assistant:
     url: https://github.com/esphome/wake-word-voice-assistants
-    files: [ m5stack-atom-echo/m5stack-atom-echo.yaml ]
+    files: [m5stack-atom-echo/m5stack-atom-echo.yaml]
     ref: main
     refresh: 0s
   # Simplify configuration by reusing common settings across all devices
   dbensmith.esphome-config:
     url: https://github.com/dbensmith/esphome-config
-    files: [ common.yaml ]
+    files: [common.yaml]
     ref: main
     refresh: 0s
 
