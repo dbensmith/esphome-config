@@ -1,5 +1,5 @@
 esphome:
-  # This board has 2 MB flash, but ESPHome assumes 1 MB for the 8285 board ID
+  # This board has 2 MB flash, but ESPHome assumes 1 MB for the 8285 board ID 
   # because early versions pre-Athom only shipped with 1 MB.
   # Athom has not yet included this fix in their default config.
   # https://github.com/athom-tech/athom-configs/issues/122#issuecomment-2929332266
@@ -9,16 +9,9 @@ esphome:
     board_upload.maximum_size: 2097152
     board_build.ldscript: eagle.flash.2m.ld
 
-esp32:
-  framework:
-    # 2026-01-30 temporary workaround for bluetooth proxy issues introduced by 2026.1.1
-    # https://github.com/esphome/esphome/issues/13560#issuecomment-3824848546
-    type: esp-idf
-    version: 5.5.1
-
 globals:
   - id: !extend restore_mode
-    initial_value: "1" # 0 = Always_Off. 1 = Restore_Power_Off. 2 = Always_On.
+    initial_value: "1"      # 0 = Always_Off. 1 = Restore_Power_Off. 2 = Always_On.
 
 ota:
   - platform: esphome
