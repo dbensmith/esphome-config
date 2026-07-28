@@ -9,6 +9,6 @@ web_server:
   port: 80
   version: 3
   auth:
-    type: digest
+    type: digest # this line becomes default after 2027.1 and can be removed then
     username: !secret web_server_username
     password: !secret web_server_password
